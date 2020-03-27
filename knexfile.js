@@ -5,7 +5,7 @@ module.exports = {
     client: "sqlite3",
     
     connection: {
-      filename: "./data/db.sqlite3"
+      filename: "./data/bases/db.sqlite3"
     },
 
     useNullAsDefault: true,
@@ -17,7 +17,7 @@ module.exports = {
     client: "sqlite3",
 
     connection: {
-      filename: "./data/testDb.sqlite3"
+      filename: "./data/bases/testDb.sqlite3"
     },
 
     useNullAsDefault: true,
