@@ -6,6 +6,10 @@
   "scripts": {
     "test": "jest --watchAll"
   },
+  "jest": {
+    "testEnvironment": "node",
+    "verbose": true
+  },
   "author": "Bernard Johnson",
   "license": "MIT",
   "dependencies": {
