@@ -1,5 +1,4 @@
 // Knex Configuration for Database Connections
-
 module.exports = {
   development: {
     client: "sqlite3",
