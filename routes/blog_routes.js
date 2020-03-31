@@ -14,11 +14,12 @@ router.get( '/', async ( _, res ) => {
 router.get( '/:id', async ( req, res ) => {
     try {
         const { id } = req.params;
-
-        const blog = await Blogs.getBy({ id });
+       
+        const blog = await Blogs.fullDetails( id );
     
         res.status( 200 ).json( blog );
     } catch(err) {
+        console.log(err)
         res.status( 500 ).json({ message: "Error Retrieving Blog", error: err });
     }
 });
