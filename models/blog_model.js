@@ -21,6 +21,22 @@ class Blogs extends BaseModel {
 
         return blog_details
     }
+
+    async allBlogsDetails() {
+        const blogs = await db(this.name).select(
+                                                    'Blogs.id',
+                                                    'Blogs.title',
+                                                    'Blogs.content',
+                                                    'Blogs.created_at',
+                                                    'Categories.name as category',
+                                                    'Users.email as author'
+                                                )
+                                        .from( 'Blogs' )
+                                        .innerJoin( 'Categories', 'Blogs.category_id', 'Categories.id' )
+                                        .innerJoin( 'Users', 'Blogs.user_id', 'Users.id' );
+
+        return blogs;
+    }
 }
 
 module.exports = new Blogs( 'Blogs' );

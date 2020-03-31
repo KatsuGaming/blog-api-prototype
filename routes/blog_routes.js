@@ -3,7 +3,7 @@ const Blogs = require( '../models/blog_model' );
 
 router.get( '/', async ( _, res ) => {
     try {
-        const blogs = await Blogs.getAll();
+        const blogs = await Blogs.allBlogsDetails();
 
         res.status( 200 ).json( blogs );
     } catch(err) {
@@ -19,7 +19,6 @@ router.get( '/:id', async ( req, res ) => {
     
         res.status( 200 ).json( blog );
     } catch(err) {
-        console.log(err)
         res.status( 500 ).json({ message: "Error Retrieving Blog", error: err });
     }
 });
