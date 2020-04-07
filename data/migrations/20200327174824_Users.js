@@ -5,6 +5,7 @@ exports.up = function(knex, Promise) {
   
         // Strings
         tbl.string( 'email' ).notNullable().unique();
+        tbl.string( 'password' ).notNullable();
         tbl.string( 'created_at' ).notNullable()
                                 .defaultTo( new Date().toLocaleDateString() )
     });
