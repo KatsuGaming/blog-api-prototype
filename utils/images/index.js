@@ -7,6 +7,7 @@ const imageHelpers = {
 
         for( const file of files ) {
             const { path } = file;
+     
             const newPath = await uploader(path);
 
             urls.push( newPath );
@@ -20,7 +21,6 @@ const imageHelpers = {
         const results = []
 
         for( let i = 0; i < urls.length; i++ ) {
-
             const imageData = {
                 blog_id,
                 user_id,

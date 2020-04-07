@@ -23,7 +23,7 @@ router.get( '/', async ( _, res ) => {
 router.post( '/', upload.array('image'), async (req, res) => {
     try {
         const uploader = async path => await cloudinary.uploads( path, 'Images' );
-    
+      
         const blog_id = req.body.blog_id;
         const user_id = req.body.blog_id;
 
@@ -33,7 +33,7 @@ router.post( '/', upload.array('image'), async (req, res) => {
         res.status(201).json({ results });
 
     } catch(err) {
-        console.log(err)
+      
         res.status( 500 ).json({ message: "Error Uploading Images", error: err });
     }
 } )

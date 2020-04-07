@@ -11,6 +11,7 @@ cloudniary.config({
 exports.uploads = (file, folder) => {
     return new Promise(resolve => {
         cloudniary.uploader.upload( file, (result) => {
+            console.log(file, result)
             resolve({
                 url: result.url,
             })
