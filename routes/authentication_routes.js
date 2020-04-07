@@ -30,6 +30,7 @@ router.post( '/login', async ( req, res ) => {
         if( passwordIsValid( user, password ) ) {
             const token = generateToken( user );
 
+            delete user.password;
             res.status( 200 ).json({ user, token });
         }
     }  catch( err ) {
